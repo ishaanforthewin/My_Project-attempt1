@@ -1,0 +1,30 @@
+
+<form action="/users/<%=@user.id%>/update">
+  
+  <div>
+    <label for="name">Name:</label><br />
+    <input id="name" name="name" value="<%= @user.name%>" type="text" />
+  </div>
+  <div>
+    <label for="email">Email:</label><br />
+    <input id="email" name="email" value="<%= @user.email%>" type="text" />
+  </div>
+  <div>
+    <label for="name">Pace:</label><br />
+    <input id="pace" name="pace" value="<%= @user.pace%>" type="text" />
+  </div>
+  <div>
+    <label for="distance">Distance:</label><br />
+    <input id="distance" name="distance" value="<%= @user.distance%>" type="text" />
+  </div>
+  <div>
+    <label for="location">Location:</label><br />
+    <input id="location" name="location" value="<%= @user.location%>" type="text" />
+  </div>
+  
+  <div>
+    <input type="submit">
+  </div>
+</form>
+
+

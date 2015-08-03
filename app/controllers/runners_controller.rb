@@ -1,2 +1,0 @@
-class RunnersController < ApplicationController
-end

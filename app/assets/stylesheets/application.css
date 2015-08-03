@@ -1,15 +1,26 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+#user_header{  
+  
+  float:right; 
+  color:#E44424; 
+  text-decoration:none; 
+  position:relative; 
+  left:0px;
+  top:10px; 
+  
+}
+.simple-btn{
+ 
+ background-color:#67BCDB;
+ padding:10px; 
+ width:75px; 
+ height:40px;
+  display:inline-block; 
+  text-decoration:none; 
+  color:#E44424; 
+  border-radius:3px; 
+    background: -webkit-linear-gradient(top, #67BCDB, #ffff99);
+    background: -moz-linear-gradient(top, #67BCDB, #ffff99);
+    background: -o-linear-gradient(top, #67BCDB, #ffff99);
+    background: -ms-linear-gradient(top, #67BCDB, #ffff99);
+    background: linear-gradient(top, #67BCDB, #ffff99);
+}
