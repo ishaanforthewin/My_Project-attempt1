@@ -1,0 +1,20 @@
+<h1> How far is the nearest runner holmes? </h1> 
+<h1> Lets find some runners near you! </h1> 
+
+<form action="/result">
+  
+  <%if session[:user_id] %>
+<input id ="origin" type ="hidden" name ="origin" placeholder ="location" value="<%=current_user.location%>"/>
+  <%else%>
+  <label for ="origin">Where u at?</label>
+<input id ="origin" type ="text" name ="origin" placeholder ="location"/>
+  
+  <%end%> 
+  
+ 
+  <label for ="destination">Where ur RunMate at dog?</label>
+  <input id ="destination" type ="text" name ="destination" placeholder ="location"/>
+  Type of transport BOI (driving, walking, bicycling)
+  <input type ="text" name ="transport" placeholder ="transport"/>
+  <input type ="submit"/> 
+</form>

@@ -1,5 +1,16 @@
 <div class="container">
-<%= form_for @user do |f| %>
+  <%= stylesheet_link_tag 'signup.css' %> 
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+  <%= form_for @user do |f| %>
+  
 <% if @user.errors.any? %>
   <div class ="error_messages">
     <h2> Form is invalid </h2>
@@ -10,38 +21,39 @@
     </ul>  
 </div>
 <%end%>
-
+<br /> <br />
+  <div class ="col-md-12">
 <div class ="field">
   <%= f.label :name %> <br />
-  <%= f.text_field :name %>
+  <div class ="inputer"> <%= f.text_field :name %> </div>
 </div>
 <div class ="field">
   <%= f.label :email %> <br />
-  <%= f.text_field :email %>
+  <div class ="inputer"> <%= f.text_field :email %></div>
 </div>
 <div class ="field">
   <%= f.label :pace %> <br />
-  <%= f.text_field :pace %>
+  <div class ="inputer"> <%= f.text_field :pace %></div>
 </div>
 <div class ="field">
   <%= f.label :distance %> <br />
-  <%= f.text_field :distance %>
+  <div class ="inputer"><%= f.text_field :distance %></div>
 </div>
 <div class ="field">
   <%= f.label :location %> <br />
-  <%= f.text_field :location %>
+  <div class ="inputer"> <%= f.text_field :location %></div>
 </div>
     <div class ="field">
       <%= f.label :password %><br />
-      <%= f.password_field :password%>
+      <div class ="inputer"> <%= f.password_field :password%> </div>
     </div>
 
           <div class="field">
             <%= f.label :password_confimation %><br />
-            <%= f.password_field :password_confirmation %>
+            <div class ="inputer">  <%= f.password_field :password_confirmation %></div>
           </div>
 
 <div class ="actions"><%=f.submit%> </div>
-
+  </div>
 <%end %>
 </div>

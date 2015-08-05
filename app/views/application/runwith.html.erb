@@ -1,0 +1,13 @@
+<% if session[:user_id] %>
+<h1> You are already logged in there is no need to specify your location </h1>
+<%else%>
+
+<h1> Since you aren't logged in, where are you currently? </h1> 
+<form action ="/reversegeocode">
+  Longitude:<input name ="longitude" type ="text" placeholder="coordinates">
+  Latitude:<input name ="latitude" type ="text" placeholder="coordinates">
+  <input type="submit">
+</form>
+
+
+<%end%>

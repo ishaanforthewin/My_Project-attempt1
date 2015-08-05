@@ -6,19 +6,36 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+  <link href="/views/application/websymbols/stylesheet.css" rel ="stylesheet" type="text/css"/>
+  
 </head>
   
 <body>
 <div id ="container">
   <div id ="user_header">
-   
+  
     <% if current_user %>
     Logged in as <%=current_user.name%>.
     <%= link_to "Log out", session_path("current"), method: "delete" %>
     <% else %>
+    
+    <div class="buttons">
    <button type="button" class="simple-btn"><%= link_to "Sign up", new_user_path %></button> 
      <button type="button" class="simple-btn"><%= link_to "Log In", new_session_path %></button>
+    </div>
+    
     <% end %>
+     
+    
+    <div class ="ourrunners">
+      <button type="button" class="simple-btn"><%= link_to "Runners", users_path %></button> 
+    </div>
+    <div class ="runner">
+     <button type="button" class="simple-btn"><%= link_to "Find", search_path %></button> 
+    </div>
+    
   </div>
 <%= yield %>
   </div>

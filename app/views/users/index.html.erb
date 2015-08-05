@@ -2,6 +2,7 @@
 
 <p><a href="/new_user">Add a New User</a></p>
 
+
 <table>
   <thead>
     <tr>
@@ -17,12 +18,14 @@
     <% @users.each do |user| %>
     <tr>
       
-      <td><%= user.name %></td>
+     <td><%= user.name %></td> 
       <td><%= user.email %></td>
-      <td><a href="/users/<%= user.id %>">Show</a>
-        </td>
+      <td><a href="/users/<%= user.id %>">Show</a> </td>   
       <td><a href="/users/<%= user.id %>/edit">Edit</a></td>
-      <td><a href="/users/<%= user.id %>/destroy">Destroy</a></td>
+     <td><a href="/users/<%= user.id %>/destroy">Destroy</a></td>
+      <td><a href="/users/<%=user.id%>/runwith">Find <%=user.name%> via your coordinates</a></td>
+      <td> Distance from you: <%=@distance%> km <br /> It should take you <%=@duration%> to drive there. </td>
+     
     </tr>
   <% end %>
   </tbody>

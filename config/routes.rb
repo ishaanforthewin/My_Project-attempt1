@@ -18,6 +18,15 @@ Rails.application.routes.draw do
   
   get '/landing' => 'application#landing'
   get '/app' => 'application#app'
+  
+  
+  
+  
+  get '/search' => 'application#search'
+  get '/result' => 'application#result'
+  
+  get "/users/:id/runwith" => 'application#runwith'
+  get "/reversegeocode" => 'application#reversegeocode'
   root to: 'application#app'
  
   resources :sessions
