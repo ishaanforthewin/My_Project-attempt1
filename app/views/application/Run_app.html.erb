@@ -15,13 +15,10 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-   <link href="/views/application/websymbols/stylesheet.css" rel ="stylesheet" type="text/css"/>
-  <link href="/views/application/websymbols/websymbols-regular-webfont.eot"/>
-  <link href="/views/application/websymbols/websymbols-regular-webfont.svg"/>
-  <link href="/views/application/websymbols/websymbols-regular-webfont.ttf" />
-  <link href="/views/application/websymbols/websymbols-regular-webfont.woff" />
-  
+   
   <%= stylesheet_link_tag 'Run_app.css' %> 
+  
+  
 </head>
     
 <body>
@@ -30,13 +27,13 @@
     <!-- Nav Start -->
     <div class="bigcontainer">
  <div class="container">
-   <%=flash[:message] %>
+  
          
             <div class="content">
               
                 <ul class="ca-menu">
                     <li>
-                        <a href="#">
+                        <a href="/">
                             <span class="ca-icon">Z</span>
                             <div class="ca-content">
                                 <h2 class="ca-main">Home</h2>
@@ -45,7 +42,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/search">
                             <span class="ca-icon">?</span>
                             <div class="ca-content">
                                 <h2 class="ca-main">Find A Group</h2>
@@ -54,16 +51,16 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/new_user">
                             <span class="ca-icon" id="heart">Q</span>
                             <div class="ca-content">
-                                <h2 class="ca-main">Make A Group</h2>
+                                <h2 class="ca-main">Become A Runner</h2>
                                 <h3 class="ca-sub">Understanding visually</h3>
                             </div>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/users">
                             <span class="ca-icon">N</span>
                             <div class="ca-content">
                                 <h2 class="ca-main">Run Free!</h2>

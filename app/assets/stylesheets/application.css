@@ -8,16 +8,11 @@
   top:10px; 
   
 }
-@font-face {
-    font-family: 'WebSymbolsRegular';
-    src: url('websymbols-regular-webfont.eot');
-    src: url('websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('websymbols-regular-webfont.woff') format('woff'),
-         url('websymbols-regular-webfont.ttf') format('truetype'),
-         url('websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+.buttons{
+  display:block; 
+  
 }
+
 .simple-btn{
  background-color:#67BCDB;
  padding:10px; 
@@ -34,3 +29,27 @@
     background: -ms-linear-gradient(top, #67BCDB, #ffff99);
     background: linear-gradient(top, #67BCDB, #ffff99);
 }
+tbody{
+  background-color:#67BCDB;
+}
+td{
+  width:200px;  
+    
+  height:100px; 
+  position:relative; 
+  left:20px; 
+}
+th{
+  text-align:left; 
+  position:relative; 
+  left:20px; 
+ 
+}
+thead{
+  background-color:#FFFF99; 
+  
+}
+.td{
+  width:400px; 
+}
+

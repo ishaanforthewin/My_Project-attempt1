@@ -1,6 +1,6 @@
-<h1>Users</h1>
+<h1>Runners!</h1>
 
-<p><a href="/new_user">Add a New User</a></p>
+<p><a href="/new_user">Become a Runner!</a></p>
 
 
 <table>
@@ -8,26 +8,27 @@
     <tr>
       <th>Name</th>
       <th>Email</th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @users.each do |user| %>
-    <tr>
-      
-     <td><%= user.name %></td> 
-      <td><%= user.email %></td>
-      <td><a href="/users/<%= user.id %>">Show</a> </td>   
-      <td><a href="/users/<%= user.id %>/edit">Edit</a></td>
-     <td><a href="/users/<%= user.id %>/destroy">Destroy</a></td>
-      <td><a href="/users/<%=user.id%>/runwith">Find <%=user.name%> via your coordinates</a></td>
-      <td> Distance from you: <%=@distance%> km <br /> It should take you <%=@duration%> to drive there. </td>
-     
-    </tr>
-  <% end %>
+      <tr> 
+        <div class ="td"><td><%= user.name %></td> </div>
+        <td><%= user.email %></td>
+        <td><a href="/users/<%= user.id %>">Show</a> </td>   
+        <td><a href="/users/<%= user.id %>/edit">Edit</a></td>
+        <td><a href="/users/<%= user.id %>/destroy">Destroy</a></td>
+        <td><%= link_to 'Add Run Partner'%></td>
+        <% if current_user %>
+          <% data = current_user.distance_duration_to(user) %>
+      <td class ="td"> Distance from you: <%= data[:distance] %> <br /> It should take you <%= data[:duration] %> to drive there. </td>
+        <% else %>
+           <td><a href="/users/<%=user.id%>/runwith">Find <%=user.name%> via your coordinates</a></td>
+        <% end %>
+        
+      </tr>
+    <% end %>
   </tbody>
 </table>
 

@@ -1,13 +1,12 @@
 @font-face {
     font-family: 'WebSymbolsRegular';
-    src: url('websymbols-regular-webfont.eot');
-    src: url('websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('websymbols-regular-webfont.woff') format('woff'),
-         url('websymbols-regular-webfont.ttf') format('truetype'),
-         url('websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
+    src: url(../../views/application/websymbols/'websymbols-regular-webfont.eot');
+    src: url(../../views/application/websymbols/'websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url(../../views/application/websymbols/'websymbols-regular-webfont.woff') format('woff'),
+         url(../../views/application/websymbols/'websymbols-regular-webfont.ttf') format('truetype'),
+         url(../../views/application/websymbols/'websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 .ca-menu{

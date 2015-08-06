@@ -1,5 +1,15 @@
-<!--This works for now but what if I want it to display just one user.name?? How ?? I DONT WANT THEM ALL FROM @USERS ARRAY!!! -->
-<% #@users.each do |user|%>
-<h1> You are in <%=@location.gsub("%20", " ")%> </h1>
-<h1> You are <%=@distance%> far away from <%=@user%> and it would take you <%=@duration%> driving </h1>
-<%#end%>
+<!--This works for now but what if I want it to display just one How ?? I DONT WANT THEM ALL FROM @USERS ARRAY!!! -->
+
+
+
+<% @users.each do |user| %> 
+
+<h1> <%=@location.gsub("%20"," ")%> </h1>
+
+<% data = locations(user) #This is basically data = location().location(user) right? Why this work? %>
+
+<h1>You are <%=data[:distance]%> far from <%=user.name%> and it would take you <%=data[:duration]%> to drive. </h1> 
+
+
+
+<%end%>

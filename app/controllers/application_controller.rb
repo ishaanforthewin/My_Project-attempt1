@@ -37,26 +37,22 @@ class ApplicationController < ActionController::Base
     @duration = parsed_result['rows'][0]["elements"][0]["duration"]["text"]
     
   end
+  
   def runwith 
   end
-  def reversegeocode
+  
+  def reversegeocode #some_runner //if you get rid of this then you must get rid of bottom
     @users = User.all
-    @user = User.find_by_id(params["id"])
     lat = params['longitude']
     long = params['latitude']
     url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=#{lat},#{long}&key=AIzaSyDZOV9q3K2BJfy2soUKCgGfOgehIKsHp5g"
     result = open(url).read
     parsed_result = JSON.parse(result)
-    
     @location = parsed_result['results'][0]['formatted_address'].gsub(" ", "%20")
-    
-    destination = "boston" #should be something like user.location of current showing user
-    secondurl = "https://maps.googleapis.com/maps/api/distancematrix/json?origins=#{@location}&destinations=#{destination}&mode=driving&key=AIzaSyDOxZ6CpbCbh1jxvCsQc_BveDvyW4iiQsU"
-    secondresult = open(secondurl).read
-    parseds_result = JSON.parse(secondresult)
-    distance_in_km = parseds_result['rows'][0]["elements"][0]["distance"]["text"]
-    @distance = distance_in_km
-    @duration = parseds_result['rows'][0]["elements"][0]["duration"]["text"]
+#      distance_url = "https://maps.googleapis.com/maps/api/distancematrix/json?origins=#{@location}&destinations=#{some_runner.location}&key=AIzaSyDOxZ6CpbCbh1jxvCsQc_BveDvyW4iiQsU"
+#     distance_parsed_result = JSON.parse(open(distance_url).read)
+#      {distance: distance_parsed_result['rows'][0]["elements"][0]["distance"]["text"], duration: distance_parsed_result['rows'][0]["elements"][0]["duration"]["text"]}
+
     
   end
   
@@ -65,4 +61,14 @@ class ApplicationController < ActionController::Base
    @current_user||= User.find(session[:user_id]) if session[:user_id]
   end
   helper_method :current_user
+  
+  private  
+def locations some_runner
+@users = User.all
+distance_url = "https://maps.googleapis.com/maps/api/distancematrix/json?origins=#{@location.gsub(" ","%20")}&destinations=#{some_runner.location.gsub(" ","%20")}"
+distance_parsed_result = JSON.parse(open(distance_url).read)
+{distance: distance_parsed_result['rows'][0]["elements"][0]["distance"]["text"], duration: distance_parsed_result['rows'][0]["elements"][0]["duration"]["text"]}
+end
+  helper_method :locations
+
 end
