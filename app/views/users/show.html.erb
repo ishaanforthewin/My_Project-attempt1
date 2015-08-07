@@ -20,5 +20,14 @@
   <b>Location</b>
 <p><%= @user.location%></p>
   </div>
+<div>
+<b>Friends</b>
+  
+  <% @user.friends.each do |friend| %><br /> 
+  <%= friend.name %>
+  <%#= link_to "Remove", friend, method: :delete %> <!--No user_path could have been destroy_friendship_path-->
+<%end%>
+  
+  </div>
 <a href="/users/<%= @user.id %>/edit">Edit</a> |
 <a href="/users/<%= @user.id %>/destroy">Destroy</a>

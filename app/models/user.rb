@@ -2,6 +2,8 @@
 # require 'json'
 
 class User < ActiveRecord::Base
+  has_many :friendships
+  has_many :friends, through: :friendships
   has_secure_password 
   validates_uniqueness_of :name
   
@@ -11,13 +13,14 @@ class User < ActiveRecord::Base
     distance_parsed_result = JSON.parse(open(distance_url).read)
     {distance: distance_parsed_result['rows'][0]["elements"][0]["distance"]["text"], duration: distance_parsed_result['rows'][0]["elements"][0]["duration"]["text"]}
   end
-  
-  # Takes location using geocoder API and then finds distance using  Distance matrix API
-#   def reverse_geocoder some_runner
-#     distance_url = "https://maps.googleapis.com/maps/api/distancematrix/json?origins=#{self.location}&destinations=#{some_runner.location}&key=AIzaSyDOxZ6CpbCbh1jxvCsQc_BveDvyW4iiQsU"
-#     distance_parsed_result = JSON.parse(open(distance_url).read)
-#     {distance: distance_parsed_result['rows'][0]["elements"][0]["distance"]["text"], duration: distance_parsed_result['rows'][0]["elements"][0]["duration"]["text"]}
+
+  def friends
+    friendships = Friendship.where(user_id: self.id) #here the self refers to the native user id. USER OBJECT
+    friend_list = Array.new
+    friendships.each do |friendship|
+      friend_list << User.find_by_id(friendship.friendship_id)
+    end
+    return friend_list.uniq
     
-#   end
-  
+  end  
 end

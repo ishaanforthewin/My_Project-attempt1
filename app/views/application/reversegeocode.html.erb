@@ -6,7 +6,7 @@
 
 <h1> <%=@location.gsub("%20"," ")%> </h1>
 
-<% data = locations(user) #This is basically data = location().location(user) right? Why this work? %>
+<% data = locations(user) %>
 
 <h1>You are <%=data[:distance]%> far from <%=user.name%> and it would take you <%=data[:duration]%> to drive. </h1> 
 

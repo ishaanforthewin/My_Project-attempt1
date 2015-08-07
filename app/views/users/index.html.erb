@@ -19,8 +19,9 @@
         <td><a href="/users/<%= user.id %>">Show</a> </td>   
         <td><a href="/users/<%= user.id %>/edit">Edit</a></td>
         <td><a href="/users/<%= user.id %>/destroy">Destroy</a></td>
-        <td><%= link_to 'Add Run Partner'%></td>
+        
         <% if current_user %>
+        <td><%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %></td>
           <% data = current_user.distance_duration_to(user) %>
       <td class ="td"> Distance from you: <%= data[:distance] %> <br /> It should take you <%= data[:duration] %> to drive there. </td>
         <% else %>
